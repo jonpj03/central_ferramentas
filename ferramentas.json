@@ -19,7 +19,7 @@
       "categoria": "Avaliações",
       "descricao": "Cadastro, organização e exportação de questões para plataformas de avaliação.",
       "icone": "Q",
-      "destaque": false,
+      "destaque": true,
       "ativo": true,
       "ordem": 2
     },
@@ -30,7 +30,7 @@
       "categoria": "Dashboards",
       "descricao": "Indicadores e visão consolidada de produtividade da equipe.",
       "icone": "D",
-      "destaque": false,
+      "destaque": true,
       "ativo": true,
       "ordem": 3
     }
