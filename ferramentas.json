@@ -14,25 +14,36 @@
     },
     {
       "id": "cadastro-questoes",
-      "nome": "Cadastro de Questões",
-      "url": "https://exemplo.github.io/cadastro-questoes/",
+      "nome": "Automação de Questões QTI",
+      "url": "https://saneadadaluno.blob.core.windows.net/solucoes/exportar-questoes-qti/index.html",
       "categoria": "Avaliações",
       "descricao": "Cadastro, organização e exportação de questões para plataformas de avaliação.",
-      "icone": "Q",
-      "destaque": false,
+      "icone": "A",
+      "destaque": true,
       "ativo": true,
       "ordem": 2
     },
     {
       "id": "produtividade",
       "nome": "Dashboard de Produtividade",
-      "url": "https://exemplo.github.io/produtividade/",
+      "url": "https://saneadadaluno.blob.core.windows.net/solucoes/acompanhamento_jon/index.html",
       "categoria": "Dashboards",
       "descricao": "Indicadores e visão consolidada de produtividade da equipe.",
       "icone": "D",
-      "destaque": false,
+      "destaque": true,
       "ativo": true,
       "ordem": 3
+    },
+    {
+      "id": "cadastro-questoes",
+      "nome": "Capacidade Polos",
+      "url": "https://nead.unigranrio.edu.br/operacoes-academicas/controle-capacidade/index.html",
+      "categoria": "Avaliações",
+      "descricao": "Ferramenta para otimização de disponibilidade de Polos e Unidades.",
+      "icone": "A",
+      "destaque": true,
+      "ativo": true,
+      "ordem": 4
     }
   ]
 }
