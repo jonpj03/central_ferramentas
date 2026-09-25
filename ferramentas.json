@@ -1,0 +1,38 @@
+{
+  "ultimaAtualizacao": "2026-09-25",
+  "ferramentas": [
+    {
+      "id": "opsboard",
+      "nome": "OpsBoard",
+      "url": "https://exemplo.github.io/opsboard/",
+      "categoria": "Projetos",
+      "descricao": "Gestão e acompanhamento de projetos, panorama, atualizações e apresentações.",
+      "icone": "P",
+      "destaque": true,
+      "ativo": true,
+      "ordem": 1
+    },
+    {
+      "id": "cadastro-questoes",
+      "nome": "Cadastro de Questões",
+      "url": "https://exemplo.github.io/cadastro-questoes/",
+      "categoria": "Avaliações",
+      "descricao": "Cadastro, organização e exportação de questões para plataformas de avaliação.",
+      "icone": "Q",
+      "destaque": false,
+      "ativo": true,
+      "ordem": 2
+    },
+    {
+      "id": "produtividade",
+      "nome": "Dashboard de Produtividade",
+      "url": "https://exemplo.github.io/produtividade/",
+      "categoria": "Dashboards",
+      "descricao": "Indicadores e visão consolidada de produtividade da equipe.",
+      "icone": "D",
+      "destaque": false,
+      "ativo": true,
+      "ordem": 3
+    }
+  ]
+}

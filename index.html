@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Central de Ferramentas</title>
+<style>
+:root{--brand:#D51862;--brand2:#ad114e;--bg:#f5f6f8;--card:#fff;--text:#24262b;--muted:#71757d;--line:#e3e6ea;--shadow:0 12px 34px rgba(20,20,30,.09)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+header{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.wrap{max-width:1320px;margin:auto;padding:22px 28px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:13px;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:800}
+h1{font-size:22px;margin:0}.sub{font-size:13px;color:var(--muted);margin-top:4px}.status{font-size:12px;color:var(--muted)}
+.controls{display:grid;grid-template-columns:1fr;gap:12px;margin:24px 0 16px}.search{padding:13px 15px;border:1px solid var(--line);background:#fff;border-radius:12px;font-size:15px;outline:none}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.chip{padding:8px 12px;border:1px solid var(--line);background:#fff;border-radius:999px;cursor:pointer;font-size:13px}.chip.active{background:#2b2d31;color:#fff;border-color:#2b2d31}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;min-height:190px;display:flex;flex-direction:column;transition:.18s}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.card.featured{border-color:#efbfd1;box-shadow:0 0 0 1px rgba(213,24,98,.05)}
+.cardtop{display:flex;justify-content:space-between;align-items:center}.icon{width:43px;height:43px;border-radius:12px;background:#fae8ef;color:var(--brand);display:grid;place-items:center;font-size:18px;font-weight:800}.badge{font-size:11px;background:#fae8ef;color:var(--brand);padding:5px 8px;border-radius:999px;font-weight:700}
+.card h3{font-size:17px;margin:14px 0 7px}.desc{font-size:13px;line-height:1.48;color:var(--muted);flex:1}.meta{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px}.tag{font-size:11px;background:#f0f1f3;padding:5px 8px;border-radius:999px;color:#555}.open{color:var(--brand);text-decoration:none;font-size:13px;font-weight:750}
+.empty,.error{grid-column:1/-1;background:#fff;border:1px dashed #ccd0d6;border-radius:16px;padding:50px 20px;text-align:center;color:var(--muted)}
+footer{max-width:1320px;margin:26px auto 0;padding:0 28px 28px;font-size:12px;color:var(--muted)}
+@media(max-width:650px){.wrap{padding:18px}.top{align-items:flex-start}.status{display:none}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap top">
+  <div class="brand"><div class="logo">A</div><div><h1>Central de Ferramentas</h1><div class="sub">Acessos internos em um único lugar</div></div></div>
+  <div class="status" id="status">Carregando base...</div>
+</div></header>
+<main class="wrap">
+  <div class="controls"><input id="q" class="search" placeholder="Buscar ferramenta, finalidade ou categoria..." oninput="render()"></div>
+  <div id="chips" class="chips"></div>
+  <section id="grid" class="grid"><div class="empty">Carregando ferramentas...</div></section>
+</main>
+<footer>A lista é carregada de <b>ferramentas.json</b>. Para publicar uma nova ferramenta, basta atualizar esse arquivo no GitHub.</footer>
+<script>
+let ferramentas=[], active='Todas';
+
+const esc=(s='')=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const cats=()=>[...new Set(ferramentas.map(x=>x.categoria||'Outros'))].sort((a,b)=>a.localeCompare(b));
+
+async function load(){
+  try{
+    const r=await fetch('./ferramentas.json?ts='+Date.now(),{cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    ferramentas=(data.ferramentas||[]).filter(x=>x.ativo!==false);
+    document.getElementById('status').textContent='Base atualizada: '+(data.ultimaAtualizacao||'—');
+    render();
+  }catch(e){
+    document.getElementById('status').textContent='Erro ao carregar base';
+    document.getElementById('grid').innerHTML='<div class="error"><b>Não foi possível carregar ferramentas.json.</b><br><br>Se estiver abrindo este arquivo diretamente no computador, publique no GitHub Pages ou rode em um servidor local.</div>';
+  }
+}
+function render(){
+ const categories=cats();
+ document.getElementById('chips').innerHTML=['Todas','Destaques',...categories].map(c=>`<button class="chip ${active===c?'active':''}" onclick="active=${JSON.stringify(c)};render()">${esc(c)}</button>`).join('');
+ const q=document.getElementById('q').value.trim().toLowerCase();
+ const list=ferramentas.filter(t=>{
+   const okCat=active==='Todas'||(active==='Destaques'&&t.destaque)||t.categoria===active;
+   const hay=[t.nome,t.categoria,t.descricao].join(' ').toLowerCase();
+   return okCat&&(!q||hay.includes(q));
+ }).sort((a,b)=>(a.ordem??999)-(b.ordem??999)||a.nome.localeCompare(b.nome));
+ const g=document.getElementById('grid');
+ if(!list.length){g.innerHTML='<div class="empty"><b>Nenhuma ferramenta encontrada.</b></div>';return}
+ g.innerHTML=list.map(t=>`<article class="card ${t.destaque?'featured':''}">
+ <div class="cardtop"><div class="icon">${esc(t.icone||(t.nome||'?')[0])}</div>${t.destaque?'<span class="badge">Destaque</span>':''}</div>
+ <h3>${esc(t.nome)}</h3><div class="desc">${esc(t.descricao||'Sem descrição cadastrada.')}</div>
+ <div class="meta"><span class="tag">${esc(t.categoria||'Outros')}</span><a class="open" href="${esc(t.url)}" target="_blank" rel="noopener">Acessar ↗</a></div>
+ </article>`).join('');
+}
+load();
+</script>
+</body>
+</html>
