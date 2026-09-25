@@ -41,7 +41,7 @@
       "categoria": "Avaliações",
       "descricao": "Ferramenta para otimização de disponibilidade de Polos e Unidades.",
       "icone": "A",
-      "destaque": true,
+      "destaque": false,
       "ativo": true,
       "ordem": 4
     },
@@ -55,6 +55,17 @@
       "destaque": false,
       "ativo": true,
       "ordem": 5
+    },
+            {
+      "id": "Recursos Didáticos",
+      "nome": "Horas Trabalhadas",
+      "url": "https://saneadadaluno.blob.core.windows.net/solucoes/horas-trabalhadas/index.html",
+      "categoria": "Recursos WEB",
+      "descricao": "Horas Trabalhadas da equipe",
+      "icone": "R",
+      "destaque": false,
+      "ativo": true,
+      "ordem": 6
     }
   ]
 }
