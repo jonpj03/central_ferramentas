@@ -3,7 +3,7 @@
   "ferramentas": [
     {
       "id": "opsboard",
-      "nome": "OpsBoard",
+      "nome": "Projetos",
       "url": "https://exemplo.github.io/opsboard/",
       "categoria": "Projetos",
       "descricao": "Gestão e acompanhamento de projetos, panorama, atualizações e apresentações.",
@@ -25,7 +25,7 @@
     },
     {
       "id": "produtividade",
-      "nome": "Dashboard de Produtividade",
+      "nome": "Produtividade",
       "url": "https://saneadadaluno.blob.core.windows.net/solucoes/acompanhamento_jon/index.html",
       "categoria": "Dashboards",
       "descricao": "Indicadores e visão consolidada de produtividade da equipe.",
@@ -44,6 +44,17 @@
       "destaque": true,
       "ativo": true,
       "ordem": 4
+    },
+        {
+      "id": "Recursos Didáticos",
+      "nome": "Recursos Didáticos",
+      "url": "https://saneadadaluno.blob.core.windows.net/solucoes/repositorio-de-recursos-didaticos/index.html",
+      "categoria": "Recursos WEB",
+      "descricao": "Repositório de Recursos Didáticos - 2026.2",
+      "icone": "R",
+      "destaque": false,
+      "ativo": true,
+      "ordem": 5
     }
   ]
 }
