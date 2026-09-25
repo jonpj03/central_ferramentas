@@ -3,8 +3,8 @@
   "ferramentas": [
     {
       "id": "opsboard",
-      "nome": "Projetos",
-      "url": "https://jonpj03.github.io/tec.ead/#/dashboard",
+      "nome": "OpsBoard",
+      "url": "https://exemplo.github.io/opsboard/",
       "categoria": "Projetos",
       "descricao": "Gestão e acompanhamento de projetos, panorama, atualizações e apresentações.",
       "icone": "P",
@@ -19,8 +19,8 @@
       "categoria": "Avaliações",
       "descricao": "Cadastro, organização e exportação de questões para plataformas de avaliação.",
       "icone": "Q",
-      "destaque": true,
-      "ativo": false,
+      "destaque": false,
+      "ativo": true,
       "ordem": 2
     },
     {
@@ -30,8 +30,8 @@
       "categoria": "Dashboards",
       "descricao": "Indicadores e visão consolidada de produtividade da equipe.",
       "icone": "D",
-      "destaque": true,
-      "ativo": false,
+      "destaque": false,
+      "ativo": true,
       "ordem": 3
     }
   ]
