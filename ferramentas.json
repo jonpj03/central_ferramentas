@@ -45,7 +45,7 @@
       "ativo": true,
       "ordem": 4
     },
-        {
+    {
       "id": "Recursos Didáticos",
       "nome": "Recursos Didáticos",
       "url": "https://saneadadaluno.blob.core.windows.net/solucoes/repositorio-de-recursos-didaticos/index.html",
@@ -56,7 +56,7 @@
       "ativo": true,
       "ordem": 5
     },
-            {
+    {
       "id": "Recursos Didáticos",
       "nome": "Horas Trabalhadas",
       "url": "https://saneadadaluno.blob.core.windows.net/solucoes/horas-trabalhadas/index.html",
@@ -66,6 +66,17 @@
       "destaque": false,
       "ativo": true,
       "ordem": 6
+    },
+    {
+      "id": "BI",
+      "nome": "BI - Acompanhamento de turmas Canvas",
+      "url": "https://app.powerbi.com/groups/me/reports/32165721-92a4-4c70-b881-f588fcbd0535/ReportSection9b0092e2f2d214910c7f?inTeams=true&ctid=60bcece8-eb6b-494e-a607-e83fcdcef333&experience=power-bi",
+      "categoria": "Power BI",
+      "descricao": "BI Destinado para acompanhamento de integrações de turmas, alunos e professores para o Canvas",
+      "icone": "BI",
+      "destaque": false,
+      "ativo": true,
+      "ordem": 7
     }
   ]
 }
