@@ -77,6 +77,17 @@
       "destaque": false,
       "ativo": true,
       "ordem": 7
+    },
+    {
+      "id": "BI",
+      "nome": "BI - Avaliações 26.2",
+      "url": "https://app.powerbi.com/groups/28aa0683-5fd4-429e-92c0-299af23f60b4/reports/a346a64b-47e7-4520-9042-c494fb27f7c1/ReportSectionb83ab0373e948a2392ce?inTeams=true&ctid=60bcece8-eb6b-494e-a607-e83fcdcef333&experience=power-bi",
+      "categoria": "Power BI",
+      "descricao": "Controle de agendamento de Provas",
+      "icone": "BI",
+      "destaque": false,
+      "ativo": true,
+      "ordem": 8
     }
   ]
 }
