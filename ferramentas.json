@@ -89,5 +89,16 @@
       "ativo": true,
       "ordem": 8
     }
+    {
+      "id": "BI",
+      "nome": "BI - Esteira de Produção 26.2",
+      "url": "https://app.powerbi.com/groups/28aa0683-5fd4-429e-92c0-299af23f60b4/reports/30813352-05a9-4de6-99dd-a62858fca6ae/ReportSectionb83ab0373e948a2392ce?inTeams=true&ctid=60bcece8-eb6b-494e-a607-e83fcdcef333&experience=power-bi&bookmarkGuid=Bookmarkc79754565c257f0d691b",
+      "categoria": "Power BI",
+      "descricao": "Indicadores para gestão da esteira de produção de disciplinas de Graduação e Pós Graduação",
+      "icone": "BI",
+      "destaque": false,
+      "ativo": true,
+      "ordem": 9
+    }
   ]
 }
