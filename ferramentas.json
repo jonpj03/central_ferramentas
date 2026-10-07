@@ -99,6 +99,17 @@
       "destaque": false,
       "ativo": true,
       "ordem": 9
+    },
+        {
+      "id": "PL",
+      "nome": "Controle de ações",
+      "url": "https://nreeducacional-my.sharepoint.com/:x:/r/personal/jonathan_souza_afya_com_br/_layouts/15/Doc.aspx?sourcedoc=%7BB4DDE63B-3D8E-4DBB-903E-056FC4AA7BDF%7D&file=A%C3%87%C3%83O%20ONS%2026.2.xlsx&action=default&mobileredirect=true",
+      "categoria": "Planilha",
+      "descricao": "Controle de priorizações do time de Operações Digitais",
+      "icone": "PL",
+      "destaque": false,
+      "ativo": true,
+      "ordem": 10
     }
   ]
 }
