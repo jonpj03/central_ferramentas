@@ -110,6 +110,17 @@
       "destaque": false,
       "ativo": true,
       "ordem": 10
+    },
+    {
+      "id": "PL",
+      "nome": "Gerador inteligente",
+      "url": "https://jonpj03.github.io/gerador_inteligente/",
+      "categoria": "Ferramentas",
+      "descricao": "Gerador inteligente de gráficos",
+      "icone": "GR",
+      "destaque": false,
+      "ativo": true,
+      "ordem": 11
     }
   ]
 }
